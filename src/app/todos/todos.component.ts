@@ -19,6 +19,18 @@ export class TodosComponent implements OnInit {
     this.listTodos();
   }
 
+  deleteTodo(id: string) {
+    try {
+      if (confirm('Are you sure you want to delete this todo?')) {
+        client.models.Todo.delete({ id });
+        this.todos = this.todos.filter(todo => todo.id !== id);
+      }
+    } catch (error) {
+      console.error('error deleting todo', error);
+    }
+  }
+
+
   listTodos() {
     try {
       client.models.Todo.observeQuery().subscribe({
