@@ -18,6 +18,13 @@
 /* Key Benefits Section - Specific to home page */
 .key-benefits {
   max-width: 1000px !important;
+  min-width: 70%;
+}
+
+/* Center align the 'What We Do For You' section title */
+.key-benefits .section-title {
+  text-align: center;
+  display: block;
 }
 
 /* Customize the shared feature-grid for benefits */
@@ -84,4 +91,25 @@
   .benefit-icon {
     font-size: 2rem;
   }
+}
+
+/* Call to Action Section - Increased contrast for readability */
+.cta-section {
+  color: #333 !important;
+}
+
+.cta-section .section-title,
+.cta-section .section-text {
+  color: #333 !important;
+}
+
+.btn.btn-primary {
+  color: #4e8cff !important;
+  background: #fff !important;
+  border-color: #4e8cff !important;
+}
+
+.btn.btn-primary:hover {
+  background: #4e8cff !important;
+  color: #fff !important;
 }
