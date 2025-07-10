@@ -1,98 +1,9 @@
 /* Meet Our Developer Page Styles */
+@import url('../../shared-styles.css');
 
-.developer-page {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  padding: 2rem 1rem 4rem 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
+/* Page-specific styles for developer page */
 
-/* Navigation Styles */
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin: -2rem -1rem 2rem -1rem;
-}
-
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Header Styles */
-.developer-page header {
-  text-align: center;
-  padding: 3rem 0 2rem 0;
-  margin-bottom: 2rem;
-}
-
-.developer-page h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  letter-spacing: -0.02em;
-}
-
-.developer-page h2 {
-  font-size: 1.8rem;
-  color: #e8f4ff;
-  font-weight: 300;
-  margin-top: 1rem;
-}
-
-/* Section Styles */
-.developer-page section {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.developer-page section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Developer Card */
+/* Developer Card - Specific to developer page */
 .developer-card {
   display: flex;
   align-items: center;
@@ -137,53 +48,14 @@
   line-height: 1.7;
 }
 
-/* Skills Section */
+/* Skills Section - Specific to developer page */
 .developer-skills {
   max-width: 1000px !important;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
+/* Skills use the shared .feature-grid, .feature-item, .feature-icon classes */
 
-.skill-item {
-  text-align: center;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(78, 140, 255, 0.1);
-}
-
-.skill-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(78, 140, 255, 0.2);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.skill-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.skill-item h4 {
-  color: #2a2a2a;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.skill-item p {
-  color: #666;
-  font-size: 1rem;
-  margin: 0;
-}
-
-/* Philosophy Section */
+/* Philosophy Section - Specific to developer page */
 .developer-philosophy blockquote {
   font-size: 1.3rem;
   line-height: 1.8;
@@ -197,115 +69,10 @@
   border-radius: 8px;
 }
 
-/* Typography */
-.developer-page h3 {
-  color: #2a2a2a;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  border-bottom: 3px solid #4e8cff;
-  padding-bottom: 0.5rem;
-  display: inline-block;
-}
+/* Contact buttons use shared .button-group class */
 
-.developer-page p {
-  font-size: 1.2rem;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-/* Contact Section */
-.developer-contact {
-  text-align: center;
-  background: linear-gradient(135deg, #4e8cff 0%, #667eea 100%);
-  color: #555;;
-}
-
-.developer-contact h3 {
-  color: #555;;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
-}
-
-.developer-contact p {
-  color: #555;;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.contact-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.contact-btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  border: 2px solid transparent;
-}
-
-.contact-btn.primary {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.contact-btn.primary:hover {
-  background: white;
-  color: #4e8cff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.contact-btn.secondary {
-  background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.contact-btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Responsive Design */
+/* Developer page specific responsive design */
 @media (max-width: 768px) {
-  .developer-page {
-    padding: 1rem 0.5rem;
-  }
-  
-  .main-nav {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    margin: -1rem -0.5rem 2rem -0.5rem;
-  }
-  
-  .nav-links {
-    gap: 1rem;
-  }
-  
-  .developer-page h1 {
-    font-size: 2.5rem;
-  }
-  
-  .developer-page h2 {
-    font-size: 1.4rem;
-  }
-  
-  .developer-page section {
-    margin: 1.5rem auto;
-    padding: 2rem 1.5rem;
-  }
-  
   .developer-card {
     flex-direction: column;
     text-align: center;
@@ -321,48 +88,9 @@
   .developer-info h3 {
     font-size: 1.8rem;
   }
-  
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .contact-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .contact-btn {
-    width: 200px;
-  }
 }
 
 @media (max-width: 480px) {
-  .main-nav {
-    padding: 0.5rem;
-  }
-  
-  .nav-logo {
-    font-size: 1.2rem;
-  }
-  
-  .nav-links a {
-    font-size: 0.9rem;
-    padding: 0.3rem 0.8rem;
-  }
-  
-  .developer-page h1 {
-    font-size: 2rem;
-  }
-  
-  .developer-page h2 {
-    font-size: 1.2rem;
-  }
-  
-  .developer-page section {
-    padding: 1.5rem 1rem;
-  }
-  
   .developer-philosophy blockquote {
     font-size: 1.1rem;
     padding: 1.5rem;
