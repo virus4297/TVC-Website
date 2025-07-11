@@ -117,7 +117,7 @@
 .logo-sticky-container {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 300;
   display: flex;
   justify-content: center;
   background: transparent;
@@ -139,4 +139,12 @@
     width: 100vw !important;
     max-width: 100vw;
   }
+}
+
+/* Navigation Styles */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: inherit; /* or your preferred background */
 }
