@@ -71,6 +71,31 @@
 
 /* Contact buttons use shared .button-group class */
 
+/* Developer Links - Specific to developer page */
+.developer-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  border: none;
+  background: none;
+}
+
+.developer-links li {
+  margin-bottom: 0.5rem;
+  border: none;
+  background: none;
+}
+
+.developer-links a {
+  color: #2563eb;
+  text-decoration: underline;
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+}
+
 /* Developer page specific responsive design */
 @media (max-width: 768px) {
   .developer-card {
