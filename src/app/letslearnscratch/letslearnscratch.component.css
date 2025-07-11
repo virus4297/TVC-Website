@@ -1,0 +1,72 @@
+/* Page container styling */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7664e2 0%, #e9ebfa 100%);
+  padding: 0;
+}
+
+/* Navigation bar consistency */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px 0 rgba(80,80,160,0.06);
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #4e8cff;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #4e8cff;
+  text-decoration: underline;
+}
+
+/* Scratch resources section */
+.scratch-resources {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px 0 rgba(80,80,160,0.08);
+  text-align: center;
+}
+
+.scratch-resources img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(80,80,160,0.06);
+}
+
+@media (max-width: 700px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .scratch-resources {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .scratch-resources img {
+    margin-bottom:

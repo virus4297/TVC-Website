@@ -117,7 +117,7 @@
 .logo-sticky-container {
   position: sticky;
   top: 0;
-  z-index: 300;
+  z-index: 200;
   display: flex;
   justify-content: center;
   background: transparent;
@@ -142,9 +142,15 @@
 }
 
 /* Navigation Styles */
+/* Navbar always on top */
 .main-nav {
   position: sticky;
   top: 0;
-  z-index: 200;
+  z-index: 300;
   background: inherit; /* or your preferred background */
+}
+
+/* Optional: Only disable pointer events for logo when at the top (JS needed for dynamic) */
+.company-logo {
+  pointer-events: none; /* Only if needed when overlapping */
 }
