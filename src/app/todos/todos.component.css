@@ -165,17 +165,221 @@
 }
 
 .btn.btn-contact {
-  margin-left: 2rem;
-  background: #2563eb;
+  background: #ff9800; /* Orange for urgency */
   color: #fff !important;
-  border: none;
-  padding: 0.5rem 1.1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-left: 2rem;
+  box-shadow: 0 2px 8px 0 rgba(255,152,0,0.12);
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
 .btn.btn-contact:hover {
-  background: #1746a0;
+  background: #fb8c00;
+  box-shadow: 0 4px 16px 0 rgba(255,152,0,0.18);
+}
+
+/* Shared Feature and Benefit Item Styles */
+.feature-item, .benefit-item, .skill-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(80,80,160,0.08);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.feature-item:hover, .benefit-item:hover, .skill-item:hover {
+  box-shadow: 0 6px 24px 0 rgba(80,80,160,0.16);
+  transform: translateY(-4px) scale(1.03);
+  cursor: pointer;
+}
+
+/* Responsive: Stack service cards vertically and scale text/spacings on small devices */
+@media (max-width: 900px) {
+  .benefits-grid,
+  .skills-grid,
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
+  }
+  .benefit-item,
+  .feature-item,
+  .skill-item {
+    margin: 0 auto;
+    width: 95%;
+    min-width: unset;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .key-benefits,
+  .skills-grid,
+  .feature-grid {
+    padding: 0 0.5rem;
+  }
+  .benefit-item,
+  .feature-item,
+  .skill-item {
+    padding: 1rem 0.5rem;
+    font-size: 0.98rem;
+  }
+  .benefit-item h4,
+  .feature-item h4,
+  .skill-item h4 {
+    font-size: 1.08rem;
+  }
+  .benefit-item p,
+  .feature-item p,
+  .skill-item p {
+    font-size: 0.98rem;
+  }
+  .hero-content {
+    padding: 0 0.5rem;
+  }
+  .hero-benefit {
+    font-size: 1.05rem;
+  }
+}
+
+/* Client Logos Section Styles */
+.client-logos {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.logos-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.logos-row img {
+  max-height: 48px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.logos-row img:hover {
+  opacity: 1;
+}
+
+/* Testimonials Section Styles */
+.testimonials {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.testimonial-list blockquote {
+  background: #f7faff;
+  border-left: 4px solid #4e8cff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+  font-style: italic;
+  margin: 0;
+}
+
+.testimonial-author {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+/* Footer Styles */
+.site-footer {
+  background: #f7faff;
+  color: #333;
+  padding: 2.5rem 1rem 1.2rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid #e0e7ef;
+  font-size: 1rem;
+}
+
+.footer-about h4,
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.08rem;
+  margin-bottom: 0.7rem;
+  color: #222;
+}
+
+.footer-links a, .footer-contact a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover, .footer-contact a:hover {
+  color: #1746a0;
+  text-decoration: underline;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-about, .footer-links, .footer-contact {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.footer-social a {
+  margin-right: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #888;
+}
+
+@media (max-width: 700px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .footer-content > div:not(:last-child) {
+    border-right: 1px solid #e0e7ef;
+    padding-right: 2rem;
+    margin-right: 2rem;
+  }
 }
