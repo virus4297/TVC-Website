@@ -1,0 +1,60 @@
+/* Navigation Bar Styles */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px 0 rgba(80,80,160,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #4e8cff;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-link.active{
+  background: #4e8cff;
+  color: #fff;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  background: #4e8cff;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}

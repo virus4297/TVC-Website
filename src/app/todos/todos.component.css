@@ -117,7 +117,7 @@
 .logo-sticky-container {
   position: sticky;
   top: 0;
-  z-index: 200;
+  z-index: 300;
   display: flex;
   justify-content: center;
   background: transparent;
@@ -141,16 +141,41 @@
   }
 }
 
-/* Navigation Styles */
-/* Navbar always on top */
-.main-nav {
-  position: sticky;
-  top: 0;
-  z-index: 300;
-  background: inherit; /* or your preferred background */
+
+
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
 }
 
-/* Optional: Only disable pointer events for logo when at the top (JS needed for dynamic) */
-.company-logo {
-  pointer-events: none; /* Only if needed when overlapping */
+.hero-content {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.hero-benefit {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.btn.btn-contact {
+  margin-left: 2rem;
+  background: #2563eb;
+  color: #fff !important;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn.btn-contact:hover {
+  background: #1746a0;
 }

@@ -1,14 +1,17 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NavComponent } from "../nav/nav.component";
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NavComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css',
 })
 export class TodosComponent implements AfterViewInit {
+  public currentPage: string = 'home';
+
   ngAfterViewInit() {
     const logo = document.getElementById('company-logo') as HTMLImageElement;
     const container = document.querySelector('.logo-sticky-container') as HTMLDivElement;
