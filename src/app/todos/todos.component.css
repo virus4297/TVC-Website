@@ -195,58 +195,172 @@
   cursor: pointer;
 }
 
-/* Responsive: Stack service cards vertically and scale text/spacings on small devices */
-@media (max-width: 900px) {
-  .benefits-grid,
-  .skills-grid,
-  .feature-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.2rem;
-  }
-  .benefit-item,
-  .feature-item,
-  .skill-item {
-    margin: 0 auto;
-    width: 95%;
-    min-width: unset;
-    max-width: 420px;
-  }
+/* --- Hero Clouds Styling --- */
+.hero-with-clouds {
+  position: relative;
+  z-index: 1;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
-@media (max-width: 600px) {
-  .key-benefits,
-  .skills-grid,
-  .feature-grid {
-    padding: 0 0.5rem;
+.clouds-grid {
+  display: grid;
+  grid-template-columns: 1fr 180px 1fr;
+  grid-template-rows: 1fr 180px 1fr 1fr; /* Add an extra row for the 6th cloud */
+  gap: 0px 18px;
+  width: 80%;
+  height: 340px;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+
+.wizard-cell {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wizard-graphic {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.10));
+  z-index: 2;
+}
+
+.cloud {
+  position: relative;
+  background: linear-gradient(180deg, #fff 80%, #f3f7fa 100%);
+  border-radius: 48% 52% 50% 50% / 60% 40% 60% 40%;
+  box-shadow: 0 8px 32px 0 rgba(80,120,200,0.13), 0 2px 8px 0 rgba(0,0,0,0.07);
+  padding: 28px 32px;
+  max-width: 180px;
+  min-width: 140px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.08rem;
+  color: #222;
+  text-shadow: 0 1px 8px #fff, 0 2px 8px #fff;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+  z-index: 1;
+  animation: floatCloud 4.5s ease-in-out infinite;
+  overflow: visible;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  opacity: 0.95;
+}
+
+/* Add extra puffs for a cartoon look */
+.cloud::after,
+.cloud::before,
+.cloud::after,
+.cloud::before {
+  /* already styled, but you can add more with nth-child or extra pseudo-elements if desired */
+}
+
+.cloud::before {
+  width: 60%;
+  height: 60%;
+  left: -30%;
+  top: 10%;
+  border-radius: 60% 60% 60% 60%;
+  box-shadow: 0 6px 18px 0 rgba(80,120,200,0.10);
+}
+
+.cloud::after {
+  width: 50%;
+  height: 50%;
+  right: -25%;
+  bottom: 10%;
+  border-radius: 60% 60% 60% 60%;
+  box-shadow: 0 6px 18px 0 rgba(80,120,200,0.10);
+}
+
+/* Optional: add a small "bump" for extra puffiness */
+.cloud .cloud-bump {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  width: 38px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px 0 rgba(80,120,200,0.08);
+  z-index: -2;
+  opacity: 0.92;
+  display: none; /* Enable if you want extra bumps */
+}
+
+/* Grid placement for clouds */
+.cloud-1 { grid-column: 1; grid-row: 1; animation-delay: 0s; }
+.cloud-2 { grid-column: 3; grid-row: 1; animation-delay: 0.8s; }
+.cloud-3 { grid-column: 1; grid-row: 3; animation-delay: 1.6s; }
+.cloud-4 { grid-column: 3; grid-row: 3; animation-delay: 2.4s; }
+.cloud-5 { grid-column: 2; grid-row: 1; animation-delay: 1.2s; }
+.cloud-6 { grid-column: 2; grid-row: 3; animation-delay: 2.8s; } /* New cloud */
+
+/* --- Existing Keyframes --- */
+@keyframes floatCloud {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive: stack clouds below wizard on mobile */
+@media (max-width: 700px) {
+  .clouds-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-width: 0;
+    height: auto;
+    gap: 0;
   }
-  .benefit-item,
-  .feature-item,
-  .skill-item {
-    padding: 1rem 0.5rem;
+  .wizard-cell {
+    order: 1;
+    margin-bottom: 1.2rem;
+  }
+  .cloud {
+    order: 2;
+    margin: 0.5rem 0;
+    max-width: 95vw;
+    min-width: 0;
+    width: 95vw;
     font-size: 0.98rem;
+    padding: 14px 8px;
   }
-  .benefit-item h4,
-  .feature-item h4,
-  .skill-item h4 {
-    font-size: 1.08rem;
-  }
-  .benefit-item p,
-  .feature-item p,
-  .skill-item p {
-    font-size: 0.98rem;
-  }
-  .hero-content {
-    padding: 0 0.5rem;
-  }
-  .hero-benefit {
-    font-size: 1.05rem;
+  .cloud-1, .cloud-2, .cloud-3, .cloud-4, .cloud-5, .cloud-6 {
+    grid-column: unset;
+    grid-row: unset;
+    animation-delay: 0s;
   }
 }
 
 /* Client Logos Section Styles */
 .client-logos {
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 .logos-row {
@@ -270,7 +384,7 @@
 /* Testimonials Section Styles */
 .testimonials {
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 .testimonial-list {
